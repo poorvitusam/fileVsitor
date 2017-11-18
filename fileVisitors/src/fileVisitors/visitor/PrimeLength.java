@@ -1,5 +1,10 @@
 package fileVisitors.visitor;
 
-public class PrimeLength {
+import fileVisitors.tree.Tree;
 
+public class PrimeLength implements VisitorI{
+	
+	public void visit(Tree tree) {
+		
+	}
 }

@@ -1,5 +1,9 @@
 package fileVisitors.visitor;
 
-public class PalindromeHighlight {
+import fileVisitors.tree.Tree;
 
+public class PalindromeHighlight implements VisitorI{
+	public void visit(Tree tree) {
+		
+	}
 }

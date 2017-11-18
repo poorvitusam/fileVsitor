@@ -3,6 +3,7 @@ package fileVisitors.driver;
 import fileVisitors.tree.Tree;
 import fileVisitors.visitor.PalindromeHighlight;
 import fileVisitors.visitor.PopulateVisitor;
+import fileVisitors.visitor.PrimeLength;
 import fileVisitors.visitor.PrintTree;
 import fileVisitors.visitor.VisitorI;
 import fileVisitors.store.Results;
@@ -40,6 +41,9 @@ public class Driver {
 		
 		VisitorI palindromeHighlight = new PalindromeHighlight();
 		tree.accept(palindromeHighlight);
+		
+		VisitorI primeLength = new PrimeLength();
+		tree.accept(primeLength);
 		
 		VisitorI printTree = new PrintTree(results);
 		tree.accept(printTree);
