@@ -1,5 +1,7 @@
 package fileVisitors.visitor;
 
-public interface VisitorI {
+import fileVisitors.tree.Tree;
 
+public interface VisitorI {
+	public void visit(Tree tree);
 }

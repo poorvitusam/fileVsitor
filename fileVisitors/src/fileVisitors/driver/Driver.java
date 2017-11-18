@@ -1,5 +1,12 @@
 package fileVisitors.driver;
 
+import fileVisitors.tree.Tree;
+import fileVisitors.visitor.PopulateVisitor;
+import fileVisitors.visitor.VisitorI;
+import fileVisitors.store.Results;
+import fileVisitors.util.FileProcessor;
+import fileVisitors.util.FileProcessor.Permission;
+
 public class Driver {
 	public static void main(String args[]) {
 		if (!validateArguments(args)) {
@@ -19,6 +26,16 @@ public class Driver {
 			System.err.println("Invalid Log level found in the command");
 			System.exit(0);
 		}
+		FileProcessor inputFileProcess = new FileProcessor(inputFile, Permission.READ, false);
+
+		Results results = new Results(outputFile);
+		
+		//Element
+		Tree tree = new Tree();
+		//visitor
+		VisitorI populateVisitor = new PopulateVisitor(inputFileProcess);
+		
+		tree.accept(populateVisitor);
 	}
 	
 	private static boolean validateArguments(String[] args) {
