@@ -1,7 +1,9 @@
 package fileVisitors.driver;
 
 import fileVisitors.tree.Tree;
+import fileVisitors.visitor.PalindromeHighlight;
 import fileVisitors.visitor.PopulateVisitor;
+import fileVisitors.visitor.PrintTree;
 import fileVisitors.visitor.VisitorI;
 import fileVisitors.store.Results;
 import fileVisitors.util.FileProcessor;
@@ -34,8 +36,17 @@ public class Driver {
 		Tree tree = new Tree();
 		//visitor
 		VisitorI populateVisitor = new PopulateVisitor(inputFileProcess);
-		
 		tree.accept(populateVisitor);
+		
+		VisitorI palindromeHighlight = new PalindromeHighlight();
+		tree.accept(palindromeHighlight);
+		
+		VisitorI printTree = new PrintTree(results);
+		tree.accept(printTree);
+		
+		results.writeToFile();
+		inputFileProcess.closeFile();
+		
 	}
 	
 	private static boolean validateArguments(String[] args) {
