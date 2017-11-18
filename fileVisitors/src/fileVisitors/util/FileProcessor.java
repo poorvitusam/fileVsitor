@@ -9,18 +9,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-//import fileVisitors.util.MyLogger.DebugLevel;
+import fileVisitors.util.MyLogger.DebugLevel;
 
-/**
- * Helper class to process READ and WRITE operations on file
- * @author suresh
- *
- */
 public class FileProcessor {
 
 	/**
 	 * Enum that will define the use of FileProcess whether it's a File READ operation or WRITE operation.
-	 * @author suresh
 	 *
 	 */
 	public enum Permission {
@@ -34,7 +28,7 @@ public class FileProcessor {
 	boolean permitEmptyFile = false;
 
 	public FileProcessor() {
-		//MyLogger.writeMessage("FileProcessor Constructor is called", DebugLevel.CONSTRUCTOR);
+		MyLogger.writeMessage("FileProcessor Constructor is called", DebugLevel.CONSTRUCTOR);
 		openFile();
 	}
 

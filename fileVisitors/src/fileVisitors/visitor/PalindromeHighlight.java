@@ -1,4 +1,4 @@
-package fileVisitors.util;
+package fileVisitors.visitor;
 
 public class PalindromeHighlight {
 
