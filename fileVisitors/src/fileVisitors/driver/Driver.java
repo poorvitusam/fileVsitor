@@ -9,6 +9,7 @@ import fileVisitors.visitor.VisitorI;
 import fileVisitors.store.Results;
 import fileVisitors.util.FileProcessor;
 import fileVisitors.util.FileProcessor.Permission;
+import fileVisitors.util.MyLogger;
 
 public class Driver {
 	public static void main(String args[]) {
@@ -29,6 +30,9 @@ public class Driver {
 			System.err.println("Invalid Log level found in the command");
 			System.exit(0);
 		}
+		
+		MyLogger.setDebugValue(debugLevel);
+		
 		FileProcessor inputFileProcess = new FileProcessor(inputFile, Permission.READ, false);
 
 		Results results = new Results(outputFile);
@@ -53,6 +57,11 @@ public class Driver {
 		
 	}
 	
+	/**
+	 * Check if the command line arguments are valid
+	 * @param args
+	 * @return<b>true</b> if valid else <b>false</b>
+	 */
 	private static boolean validateArguments(String[] args) {
 		if (args == null || args.length != 3) {
 			return false;

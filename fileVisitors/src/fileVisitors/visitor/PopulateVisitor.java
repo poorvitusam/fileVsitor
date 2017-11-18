@@ -3,6 +3,11 @@ package fileVisitors.visitor;
 import fileVisitors.tree.Tree;
 import fileVisitors.util.FileProcessor;
 
+/**
+ * Visitor class to construct a Binary Search Tree from a Text File
+ * @author suresh
+ *
+ */
 public class PopulateVisitor implements VisitorI{
 	FileProcessor fileProcessor;
 	

@@ -3,6 +3,11 @@ package fileVisitors.visitor;
 import fileVisitors.store.Results;
 import fileVisitors.tree.Tree;
 
+/**
+ * Visitor class that traverse the tree and prints the node in output file.
+ * @author suresh
+ *
+ */
 public class PrintTree implements VisitorI{
 	Results result; 
 	
