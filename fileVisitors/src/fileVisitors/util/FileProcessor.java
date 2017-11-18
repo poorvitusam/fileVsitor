@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import fileVisitors.util.MyLogger.DebugLevel;
+//import fileVisitors.util.MyLogger.DebugLevel;
 
 /**
  * Helper class to process READ and WRITE operations on file
@@ -34,7 +34,7 @@ public class FileProcessor {
 	boolean permitEmptyFile = false;
 
 	public FileProcessor() {
-		MyLogger.writeMessage("FileProcessor Constructor is called", DebugLevel.CONSTRUCTOR);
+		//MyLogger.writeMessage("FileProcessor Constructor is called", DebugLevel.CONSTRUCTOR);
 		openFile();
 	}
 
@@ -46,7 +46,7 @@ public class FileProcessor {
 	 * @param permitEmptyFile
 	 */
 	public FileProcessor(String filePath, Permission permission, boolean permitEmptyFile) {
-		MyLogger.writeMessage("FileProcessor Parameterized Constructor is called", DebugLevel.CONSTRUCTOR);
+		//MyLogger.writeMessage("FileProcessor Parameterized Constructor is called", DebugLevel.CONSTRUCTOR);
 		this.filePath = filePath;
 		this.permission = permission;
 		this.permitEmptyFile = permitEmptyFile;
@@ -199,9 +199,5 @@ public class FileProcessor {
 		this.permission = permission;
 	}
 
-
-}
-
-public class FileProcessor {
 
 }
