@@ -125,7 +125,7 @@ public class Tree {
 		
 		printInAscendingOrder(node.getLeftNode(), result);
 		
-		result.storeNewResult(node.toString());
+		result.storeNewResult(node.getWord());
 		
 		printInAscendingOrder(node.getRightNode(), result);
 	}
