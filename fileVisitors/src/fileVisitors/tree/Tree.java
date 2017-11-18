@@ -26,6 +26,10 @@ public class Tree {
 		this.rootNode = rootNode;
 	}
 	
+	public Node getRootNode() {
+		return rootNode;
+	}
+	
 	public void accept(VisitorI visitor) {
 		visitor.visit(this);
 	}
