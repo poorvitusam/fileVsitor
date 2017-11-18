@@ -1,6 +1,7 @@
 package fileVisitors.visitor;
 
 import fileVisitors.store.Results;
+import fileVisitors.tree.Node;
 import fileVisitors.tree.Tree;
 
 /**
@@ -16,6 +17,24 @@ public class PrintTree implements VisitorI{
 	}
 	
 	public void visit(Tree tree) {
-		tree.printNodes(result);
+		printInAscendingOrder(tree.getRootNode(), result);
+		result.writeToFile();
+	}
+	
+	
+	
+	/**
+	 * Traverse tree in In Order form and store result in Results object
+	 * @param node
+	 * @param result
+	 */
+	private void printInAscendingOrder(Node node, Results result) {
+		if(node == null) return;
+		
+		printInAscendingOrder(node.getLeftNode(), result);
+		
+		result.storeNewResult(node.getWord());
+		
+		printInAscendingOrder(node.getRightNode(), result);
 	}
 }

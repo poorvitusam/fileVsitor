@@ -1,18 +1,19 @@
 package fileVisitors.driver;
 
+import fileVisitors.store.Results;
 import fileVisitors.tree.Tree;
+import fileVisitors.util.FileProcessor;
+import fileVisitors.util.FileProcessor.Permission;
+import fileVisitors.util.MyLogger;
 import fileVisitors.visitor.PalindromeHighlight;
 import fileVisitors.visitor.PopulateVisitor;
 import fileVisitors.visitor.PrimeLength;
 import fileVisitors.visitor.PrintTree;
 import fileVisitors.visitor.VisitorI;
-import fileVisitors.store.Results;
-import fileVisitors.util.FileProcessor;
-import fileVisitors.util.FileProcessor.Permission;
-import fileVisitors.util.MyLogger;
 
 public class Driver {
 	public static void main(String args[]) {
+		
 		if (!validateArguments(args)) {
 			System.err.println("Please provide valid number of arguments. 3 Arguments are expected: "
 					+ "\n1.Input File \n2.Output File \n3.Log Level");
@@ -52,7 +53,6 @@ public class Driver {
 		VisitorI printTree = new PrintTree(results);
 		tree.accept(printTree);
 		
-		results.writeToFile();
 		inputFileProcess.closeFile();
 		
 	}
