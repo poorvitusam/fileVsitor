@@ -3,6 +3,8 @@ package fileVisitors.visitor;
 import fileVisitors.store.Results;
 import fileVisitors.tree.Node;
 import fileVisitors.tree.Tree;
+import fileVisitors.util.MyLogger;
+import fileVisitors.util.MyLogger.DebugLevel;
 
 /**
  * Visitor class that traverse the tree and prints the node in output file.
@@ -14,6 +16,7 @@ public class PrintTree implements VisitorI{
 	
 	public PrintTree(Results results) {
 		result = results;
+		MyLogger.writeMessage( this.getClass().getSimpleName()+ " Constructor is called", DebugLevel.CONSTRUCTOR);
 	}
 	
 	public void visit(Tree tree) {

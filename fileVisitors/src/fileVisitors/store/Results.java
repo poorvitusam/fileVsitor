@@ -22,7 +22,7 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 	String outputFilePath;
 
 	public Results(String outputFilePath) {
-		MyLogger.writeMessage("Results Parameterized Constructor is called", DebugLevel.CONSTRUCTOR);
+		MyLogger.writeMessage( this.getClass().getSimpleName()+ " Constructor is called", DebugLevel.CONSTRUCTOR);
 		this.outputFilePath = outputFilePath;
 	}
 
@@ -44,7 +44,7 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 		fileProcessor.writeLines(testResults);
 		fileProcessor.closeFile();
 		
-		MyLogger.writeMessage("Result is generated at path = " + fileProcessor.getFilePath(), DebugLevel.VERBOSE);
+		MyLogger.writeMessage("Result is generated at path = " + fileProcessor.getFilePath(), DebugLevel.DEBUG);
 	}
 
 

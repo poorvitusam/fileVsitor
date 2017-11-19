@@ -28,7 +28,7 @@ public class FileProcessor {
 	boolean permitEmptyFile = false;
 
 	public FileProcessor() {
-		MyLogger.writeMessage("FileProcessor Constructor is called", DebugLevel.CONSTRUCTOR);
+		MyLogger.writeMessage( this.getClass().getSimpleName()+ " Constructor is called", DebugLevel.CONSTRUCTOR);
 		openFile();
 	}
 

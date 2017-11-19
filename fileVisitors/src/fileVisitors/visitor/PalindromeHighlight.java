@@ -2,6 +2,8 @@ package fileVisitors.visitor;
 
 import fileVisitors.tree.Node;
 import fileVisitors.tree.Tree;
+import fileVisitors.util.MyLogger;
+import fileVisitors.util.MyLogger.DebugLevel;
 
 /**
  * Visitor class that process the Tree and Highlight all the palinformic nodes by changing the words to
@@ -10,6 +12,10 @@ import fileVisitors.tree.Tree;
  *
  */
 public class PalindromeHighlight implements VisitorI {
+	
+	public PalindromeHighlight() {
+		MyLogger.writeMessage( this.getClass().getSimpleName()+ " Constructor is called", DebugLevel.CONSTRUCTOR);
+	}
 
 	public void visit(Tree tree) {
 		processTree(tree.getRootNode());
@@ -29,7 +35,7 @@ public class PalindromeHighlight implements VisitorI {
 		if(node.getWord().length() > 3 && isPalindrome(node.getWord())) {
 			String word = node.getWord().toUpperCase();
 			node.setWord(word);
-			
+			MyLogger.writeMessage(node.getWord() + " Word is a palindromic string so updated to " + word, DebugLevel.PALINDROME);
 		}
 		
 		processTree(node.getRightNode());

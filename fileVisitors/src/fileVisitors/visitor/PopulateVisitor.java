@@ -2,6 +2,8 @@ package fileVisitors.visitor;
 
 import fileVisitors.tree.Tree;
 import fileVisitors.util.FileProcessor;
+import fileVisitors.util.MyLogger;
+import fileVisitors.util.MyLogger.DebugLevel;
 
 /**
  * Visitor class to construct a Binary Search Tree from a Text File
@@ -13,6 +15,7 @@ public class PopulateVisitor implements VisitorI{
 	
 	public PopulateVisitor(FileProcessor fp) {
 		fileProcessor = fp;
+		MyLogger.writeMessage( this.getClass().getSimpleName()+ " Constructor is called", DebugLevel.CONSTRUCTOR);
 	}
 	
 	public void visit(Tree tree) {

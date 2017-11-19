@@ -2,7 +2,7 @@ package fileVisitors.util;
 
 public class MyLogger{
 
-	public static enum DebugLevel {RELEASE, DEBUG, VERBOSE, RUNNABLE, DELETED, CONSTRUCTOR};
+	public static enum DebugLevel {RELEASE, DEBUG, PALINDROME, PRIME, DELETED, CONSTRUCTOR};
 
 	private static DebugLevel debugLevel;
 
@@ -10,8 +10,8 @@ public class MyLogger{
 	public static void setDebugValue (int levelIn) {
 		switch (levelIn) {
 		case 4: debugLevel = DebugLevel.CONSTRUCTOR; break;
-		case 3: debugLevel = DebugLevel.RUNNABLE; break;
-		case 2: debugLevel = DebugLevel.VERBOSE; break;
+		case 3: debugLevel = DebugLevel.PRIME; break;
+		case 2: debugLevel = DebugLevel.PALINDROME; break;
 		case 1: debugLevel = DebugLevel.DEBUG; break;
 		case 0: debugLevel = DebugLevel.RELEASE; break;
 		}

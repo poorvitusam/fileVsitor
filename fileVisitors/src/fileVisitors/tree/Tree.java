@@ -14,7 +14,7 @@ public class Tree {
 	Node rootNode; 
 	
 	public Tree() {
-		MyLogger.writeMessage("Tree Parameterized Constructor is called ", DebugLevel.CONSTRUCTOR);
+		MyLogger.writeMessage( this.getClass().getSimpleName()+ " Constructor is called", DebugLevel.CONSTRUCTOR);
 	}
 	
 	public void setRootNode(Node rootNode) {

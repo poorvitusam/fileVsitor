@@ -28,7 +28,7 @@ public class Node {
 	 * @param bNumber
 	 */
 	public Node(String wordI) {
-		MyLogger.writeMessage("Node Parameterized Constructor is called ", DebugLevel.CONSTRUCTOR);
+		MyLogger.writeMessage( this.getClass().getSimpleName()+ " Constructor is called", DebugLevel.CONSTRUCTOR);
 		word = wordI;
 		leftNode = null;
 		rightNode = null;
