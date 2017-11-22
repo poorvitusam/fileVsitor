@@ -4,6 +4,7 @@ import fileVisitors.tree.Node;
 import fileVisitors.tree.Tree;
 import fileVisitors.util.MyLogger;
 import fileVisitors.util.MyLogger.DebugLevel;
+import fileVisitors.util.StringHelper;
 
 /**
  * Visitor class that process the Tree and Highlight all the palinformic nodes by changing the words to
@@ -32,7 +33,7 @@ public class PalindromeHighlight implements VisitorI {
 		
 		processTree(node.getLeftNode());
 		
-		if(node.getWord().length() > 3 && isPalindrome(node.getWord())) {
+		if(node.getWord().length() > 3 && StringHelper.isPalindrome(node.getWord())) {
 			String word = node.getWord().toUpperCase();
 			node.setWord(word);
 			MyLogger.writeMessage(node.getWord() + " Word is a palindromic string so updated to " + word, DebugLevel.PALINDROME);
@@ -43,29 +44,5 @@ public class PalindromeHighlight implements VisitorI {
 	}
 
 
-	/**
-	 * Check if the word is a Palindrome
-	 * @param str
-	 * @return <b>true</b> if word is palindrome else  <b>false</b>
- 	 */
-	private  boolean isPalindrome(String str) {
-		int j = str.length() - 1;
-		int i = 0;
-
-		while(j > i) {
-			char charAti = str.toLowerCase().charAt(i);
-			char charAtj = str.toLowerCase().charAt(j);
-
-			if(charAti != charAtj) {
-				return false;
-			}
-
-			i += 1;
-			j -= 1;
-
-		}
-		return true;
-
-	}
 
 }
