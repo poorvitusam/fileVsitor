@@ -65,6 +65,12 @@ public class FileProcessor {
 		try {
 			switch (permission) {
 			case READ:
+				
+				if(!file.exists()) {
+					System.err.println("\"" + file.getName() + "\"" + " - File doesn't exist!");
+					System.exit(0);
+					return false;
+				}
 
 				/*Exit application if file is empty and empty file is not permitted*/
 				if(file.length() == 0 && !permitEmptyFile) {
